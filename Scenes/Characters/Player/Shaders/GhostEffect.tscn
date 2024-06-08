@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://dbwc1ahlvgwr4"]
+
+[ext_resource type="Texture2D" uid="uid://vi3sb1txtqoa" path="res://Assets/Characters/Player/Dash/Dashing/Dashing1.png" id="1_p6h1q"]
+[ext_resource type="Script" path="res://Scenes/Characters/Player/Shaders/GhostEffect.gd" id="2_oywdk"]
+
+[node name="GhostEffect" type="Sprite2D"]
+modulate = Color(0.313726, 0.313726, 0.313726, 0.670588)
+show_behind_parent = true
+texture = ExtResource("1_p6h1q")
+script = ExtResource("2_oywdk")
