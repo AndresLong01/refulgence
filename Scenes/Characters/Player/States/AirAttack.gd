@@ -6,7 +6,7 @@ const ATTACK_BUFFER_FRAMES: int = 16
 var attack_buffer_counter: int = 0
 
 func enter() -> void:
-	attack()
+	animate_attack()
 	if not player.animation_player.is_connected("animation_finished", on_animation_finished):
 		player.animation_player.connect("animation_finished", on_animation_finished)
 
@@ -24,7 +24,7 @@ func physics_update(delta: float) -> void:
 func exit() -> void:
 	player.animation_player.disconnect("animation_finished", on_animation_finished)
 
-func attack() -> void:
+func animate_attack() -> void:
 	player.animation_player.play(GameConstants.ANIM_AIR_ATTACK)
 
 func calculate_buffer() -> void:
@@ -34,8 +34,8 @@ func calculate_buffer() -> void:
 	if attack_buffer_counter > 0:
 		attack_buffer_counter -= 1
 
-func on_animation_finished(animation_name: String) -> void:
+func on_animation_finished(_animation_name: String) -> void:
 	if attack_buffer_counter > 0:
-		attack()
+		animate_attack()
 	else:
 		Transitioned.emit("idle")

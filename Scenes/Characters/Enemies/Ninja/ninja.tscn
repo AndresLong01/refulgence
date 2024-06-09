@@ -1,12 +1,52 @@
-[gd_scene load_steps=8 format=3 uid="uid://cpkd4nxkmm7ib"]
+[gd_scene load_steps=40 format=3 uid="uid://cpkd4nxkmm7ib"]
 
-[ext_resource type="Texture2D" uid="uid://sq8bj87y0lmm" path="res://Assets/Characters/Enemies/PlaceholderNinja/Idle.png" id="1_8t806"]
 [ext_resource type="Script" path="res://Scenes/Characters/Enemies/Ninja/Ninja.gd" id="1_h31j7"]
+[ext_resource type="Script" path="res://Resources/StatResource/StatResource.gd" id="2_a4qgc"]
+[ext_resource type="Texture2D" uid="uid://dbp8abgyvb3ku" path="res://Assets/Characters/Enemies/PlaceholderNinja/Idle/Idle8.png" id="3_63hu7"]
 [ext_resource type="Script" path="res://Scenes/Characters/Enemies/EnemyStateMachine.gd" id="3_qgdfu"]
 [ext_resource type="Script" path="res://Scenes/Characters/Enemies/Ninja/States/Idle.gd" id="4_hggm4"]
+[ext_resource type="Texture2D" uid="uid://ih5e2rdw53ek" path="res://Assets/Characters/Enemies/PlaceholderNinja/Idle/Idle1.png" id="4_ktx47"]
+[ext_resource type="Texture2D" uid="uid://sr3un08onpcd" path="res://Assets/Characters/Enemies/PlaceholderNinja/Idle/Idle2.png" id="5_h5rku"]
+[ext_resource type="Texture2D" uid="uid://kv6lfl1q6kox" path="res://Assets/Characters/Enemies/PlaceholderNinja/Idle/Idle3.png" id="6_2rquf"]
+[ext_resource type="Script" path="res://Scenes/Characters/Enemies/Ninja/States/Return.gd" id="6_boh6s"]
+[ext_resource type="Texture2D" uid="uid://dkeuvq3jnxyy7" path="res://Assets/Characters/Enemies/PlaceholderNinja/Idle/Idle4.png" id="7_0fkn8"]
+[ext_resource type="Texture2D" uid="uid://bppqdvjs3oaqr" path="res://Assets/Characters/Enemies/PlaceholderNinja/Idle/Idle5.png" id="8_mr6ij"]
+[ext_resource type="Texture2D" uid="uid://tmqyjpv4digj" path="res://Assets/Characters/Enemies/PlaceholderNinja/Idle/Idle6.png" id="9_88tuq"]
+[ext_resource type="Texture2D" uid="uid://blo3flll7pcfa" path="res://Assets/Characters/Enemies/PlaceholderNinja/Idle/Idle7.png" id="10_u1q06"]
+[ext_resource type="Texture2D" uid="uid://ce2c1m0w071ii" path="res://Assets/Characters/Enemies/PlaceholderNinja/Idle/Idle9.png" id="11_hhhed"]
+[ext_resource type="Texture2D" uid="uid://d3v47n6u2mft5" path="res://Assets/Characters/Enemies/PlaceholderNinja/Idle/Idle10.png" id="12_k0424"]
+[ext_resource type="Texture2D" uid="uid://b75gua7cm8267" path="res://Assets/Characters/Enemies/PlaceholderNinja/Run/Run1.png" id="13_m5c84"]
+[ext_resource type="Texture2D" uid="uid://tlldpxgxm3ly" path="res://Assets/Characters/Enemies/PlaceholderNinja/Run/Run2.png" id="14_ypmw6"]
+[ext_resource type="Texture2D" uid="uid://bqwmvk3lfisps" path="res://Assets/Characters/Enemies/PlaceholderNinja/Run/Run3.png" id="15_fo7yx"]
+[ext_resource type="Texture2D" uid="uid://vqho54o0q8hy" path="res://Assets/Characters/Enemies/PlaceholderNinja/Run/Run4.png" id="16_78oda"]
+[ext_resource type="Texture2D" uid="uid://cdusdeh3m8apu" path="res://Assets/Characters/Enemies/PlaceholderNinja/Run/Run5.png" id="17_6mv1t"]
+[ext_resource type="Texture2D" uid="uid://bryld4ujn2tqk" path="res://Assets/Characters/Enemies/PlaceholderNinja/Run/Run6.png" id="18_31iw6"]
+[ext_resource type="Texture2D" uid="uid://c61s14y7jdj08" path="res://Assets/Characters/Enemies/PlaceholderNinja/Run/Run7.png" id="19_8wvvn"]
+[ext_resource type="Texture2D" uid="uid://xm475bkxgu18" path="res://Assets/Characters/Enemies/PlaceholderNinja/Run/Run8.png" id="20_u0tws"]
+[ext_resource type="Texture2D" uid="uid://k4camg2dsvnh" path="res://Assets/Characters/Enemies/PlaceholderNinja/Walk/Walk1.png" id="21_hc618"]
+[ext_resource type="Texture2D" uid="uid://dvxmqb37nh0uk" path="res://Assets/Characters/Enemies/PlaceholderNinja/Walk/Walk2.png" id="22_66yd2"]
+[ext_resource type="Texture2D" uid="uid://crufrkra3uaki" path="res://Assets/Characters/Enemies/PlaceholderNinja/Walk/Walk3.png" id="23_6182m"]
+[ext_resource type="Texture2D" uid="uid://dyedopxxw58ds" path="res://Assets/Characters/Enemies/PlaceholderNinja/Walk/Walk4.png" id="24_x57dl"]
+[ext_resource type="Texture2D" uid="uid://dpke5e8c4y63u" path="res://Assets/Characters/Enemies/PlaceholderNinja/Walk/Walk5.png" id="25_0etxt"]
+[ext_resource type="Texture2D" uid="uid://2lod8eqnminm" path="res://Assets/Characters/Enemies/PlaceholderNinja/Walk/Walk6.png" id="26_hrvhr"]
+[ext_resource type="Texture2D" uid="uid://c2rus6pmvyam3" path="res://Assets/Characters/Enemies/PlaceholderNinja/Walk/Walk7.png" id="27_ljt3d"]
+[ext_resource type="Texture2D" uid="uid://ch4iglt5xr232" path="res://Assets/Characters/Enemies/PlaceholderNinja/Walk/Walk8.png" id="28_guoyo"]
+
+[sub_resource type="Resource" id="Resource_nwtfs"]
+script = ExtResource("2_a4qgc")
+stat_type = 0
+stat_value = 20.0
+
+[sub_resource type="Resource" id="Resource_ru6ww"]
+script = ExtResource("2_a4qgc")
+stat_type = 1
+stat_value = 4.0
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_oip2f"]
 height = 52.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ctsan"]
+size = Vector2(14, 20)
 
 [sub_resource type="Animation" id="Animation_wwbyk"]
 resource_name = "Idle"
@@ -14,33 +54,88 @@ loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/path = NodePath("Sprite2D:texture")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
-"values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+"values": [ExtResource("4_ktx47"), ExtResource("5_h5rku"), ExtResource("6_2rquf"), ExtResource("7_0fkn8"), ExtResource("8_mr6ij"), ExtResource("9_88tuq"), ExtResource("10_u1q06"), ExtResource("3_63hu7"), ExtResource("11_hhhed"), ExtResource("12_k0424")]
+}
+
+[sub_resource type="Animation" id="Animation_0foy8"]
+resource_name = "Move"
+length = 0.8
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("13_m5c84"), ExtResource("14_ypmw6"), ExtResource("15_fo7yx"), ExtResource("16_78oda"), ExtResource("17_6mv1t"), ExtResource("18_31iw6"), ExtResource("19_8wvvn"), ExtResource("20_u0tws")]
+}
+
+[sub_resource type="Animation" id="Animation_t2hcl"]
+resource_name = "Patrol"
+length = 0.8
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("21_hc618"), ExtResource("22_66yd2"), ExtResource("23_6182m"), ExtResource("24_x57dl"), ExtResource("25_0etxt"), ExtResource("26_hrvhr"), ExtResource("27_ljt3d"), ExtResource("28_guoyo")]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_rgsam"]
 _data = {
-"Idle": SubResource("Animation_wwbyk")
+"Idle": SubResource("Animation_wwbyk"),
+"Move": SubResource("Animation_0foy8"),
+"Patrol": SubResource("Animation_t2hcl")
 }
 
-[node name="Ninja" type="CharacterBody2D" node_paths=PackedStringArray("sprite", "animation_player")]
+[node name="Ninja" type="CharacterBody2D" node_paths=PackedStringArray("navigation_agent", "sprite", "animation_player", "hurtbox", "hitbox")]
 script = ExtResource("1_h31j7")
+enemy_speed = 80.0
+navigation_agent = NodePath("NavigationAgent2D")
+stats = Array[ExtResource("2_a4qgc")]([SubResource("Resource_nwtfs"), SubResource("Resource_ru6ww")])
 sprite = NodePath("Sprite2D")
 animation_player = NodePath("AnimationPlayer")
+hurtbox = NodePath("Hurtbox")
+hitbox = NodePath("Hitbox")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_8t806")
-hframes = 10
-frame = 9
+texture = ExtResource("28_guoyo")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_oip2f")
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+path_postprocessing = 1
+
+[node name="Hurtbox" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox"]
+shape = SubResource("CapsuleShape2D_oip2f")
+
+[node name="Hitbox" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
+shape = SubResource("RectangleShape2D_ctsan")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
@@ -50,8 +145,12 @@ libraries = {
 [node name="FSM" type="Node" parent="." node_paths=PackedStringArray("enemy", "initial_state")]
 script = ExtResource("3_qgdfu")
 enemy = NodePath("..")
-initial_state = NodePath("Idle")
+initial_state = NodePath("Return")
 
 [node name="Idle" type="Node" parent="FSM" node_paths=PackedStringArray("enemy")]
 script = ExtResource("4_hggm4")
+enemy = NodePath("../..")
+
+[node name="Return" type="Node" parent="FSM" node_paths=PackedStringArray("enemy")]
+script = ExtResource("6_boh6s")
 enemy = NodePath("../..")

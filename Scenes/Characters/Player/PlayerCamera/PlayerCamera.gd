@@ -8,7 +8,7 @@ func _ready() -> void:
 	make_current()
 	offset.y = -40.0
 
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	acquire_position()
 
 func acquire_position() -> void:

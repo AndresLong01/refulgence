@@ -31,7 +31,7 @@ func add_ghost():
 	ghost.set_property(player.sprite.texture, player.position, player.sprite.scale, player.sprite.flip_h)
 	get_tree().current_scene.add_child(ghost)
 
-func on_animation_finished(animation_name: String) -> void:
+func on_animation_finished(_animation_name: String) -> void:
 	Transitioned.emit("idle")
 
 func _on_ghost_timer_timeout():

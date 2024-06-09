@@ -11,20 +11,37 @@ var max_combo_count: int = 2
 
 func enter() -> void:
 	player.toggle_horizontal_input(false)
-	attack()
+	animate_attack_combo()
 	player.animation_player.connect("animation_finished", on_animation_finished)
 
-func physics_update(delta) -> void:
+func update(_delta: float) -> void:
+	check_for_dash_input()
+
+func physics_update(delta : float) -> void:
 	calculate_buffer()
 	player.velocity.y += player.GRAVITY * delta
 
 func exit() -> void:
 	player.toggle_horizontal_input(true)
+	# Disable lasting hitboxes if exiting state early. 
+	#NOTE Might need a rework for multiple hitboxes (future)
+	var hitbox_collider: CollisionShape2D = player.hitbox.get_child(0)
+	if !hitbox_collider.disabled:
+		hitbox_collider.disabled = true
 	player.animation_player.disconnect("animation_finished", on_animation_finished)
 	
 	reset_combo.start()
 
-func attack() -> void:
+#func attack() -> void:
+	#var new_position: Vector2
+	#if player.sprite.flip_h:
+		#new_position = Vector2(-23, -2)
+	#else:
+		#new_position = Vector2(23, -2)
+	#
+	#player.hitbox.position = new_position
+
+func animate_attack_combo() -> void:
 	player.animation_player.play(GameConstants.ANIM_ATTACK + str(combo_counter))
 	
 	combo_counter += 1
@@ -37,11 +54,11 @@ func calculate_buffer() -> void:
 	if attack_buffer_counter > 0:
 		attack_buffer_counter -= 1
 
-func on_animation_finished(animation_name: String) -> void:
+func on_animation_finished(_animation_name: String) -> void:
 	if attack_buffer_counter > 0:
-		attack()
+		animate_attack_combo()
 	else:
 		Transitioned.emit("idle")
 
-func _on_reset_combo_timeout():
+func _on_reset_combo_timeout() -> void:
 	combo_counter = 1

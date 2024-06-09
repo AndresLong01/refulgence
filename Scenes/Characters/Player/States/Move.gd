@@ -7,7 +7,7 @@ func enter() -> void:
 	player.animation_player.play(GameConstants.ANIM_START_MOVE)
 	player.animation_player.connect("animation_finished", on_animation_finished)
 
-func update(delta: float) -> void:
+func update(_delta: float) -> void:
 	check_for_jump_input()
 	check_for_attack_input()
 	check_for_dash_input()

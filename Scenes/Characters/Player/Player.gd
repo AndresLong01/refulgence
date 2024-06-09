@@ -18,6 +18,7 @@ const MAX_FALL_SPEED: float = 600.0
 #endregion
 
 func _ready() -> void:
+	super()
 	pass
 
 func _physics_process(_delta: float) -> void:
@@ -25,13 +26,6 @@ func _physics_process(_delta: float) -> void:
 		apply_horizontal_momentum()
 	flip_sprite()
 	move_and_slide()
-
-func flip_sprite() -> void:
-	if velocity.x == 0:
-		return
-	
-	var isMovingLeft: bool = velocity.x < 0
-	sprite.flip_h = isMovingLeft
 
 func apply_horizontal_momentum() -> void:
 	var direction: int = 0
