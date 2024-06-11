@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Refulgence"
-run/main_scene="res://Scenes/Main/Main.tscn"
+run/main_scene="res://Scenes/DebugPlayground/DebugPlayground.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://icon.svg"
 
@@ -54,6 +54,10 @@ Attack={
 
 [layer_names]
 
+2d_render/layer_1="Background"
+2d_render/layer_2="Decorations"
+2d_render/layer_3="Player"
+2d_render/layer_4="Foreground"
 2d_physics/layer_1="Ground"
 2d_physics/layer_2="Player"
 2d_physics/layer_3="Enemy"

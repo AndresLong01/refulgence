@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://611hm41u2u73"
+path="res://.godot/imported/Whispering Pines.mp3-a65c367493a9cb68364a5d64f544deb3.mp3str"
+
+[deps]
+
+source_file="res://Assets/Music/Whispering Pines.mp3"
+dest_files=["res://.godot/imported/Whispering Pines.mp3-a65c367493a9cb68364a5d64f544deb3.mp3str"]
+
+[params]
+
+loop=true
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

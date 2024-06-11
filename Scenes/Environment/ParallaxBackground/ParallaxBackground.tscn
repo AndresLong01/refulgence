@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=3 uid="uid://bpehyxhgx1hm2"]
+
+[ext_resource type="Script" path="res://Scenes/Environment/ParallaxBackground/ParallaxBackground.gd" id="1_1bwsd"]
+[ext_resource type="Script" path="res://Scenes/Environment/ParallaxBackground/CanvasLayer.gd" id="2_4wff2"]
+
+[node name="Background" type="CanvasLayer"]
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+script = ExtResource("1_1bwsd")
+level_number = 1
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." node_paths=PackedStringArray("parallax", "color_rect")]
+layer = -128
+script = ExtResource("2_4wff2")
+parallax = NodePath("../ParallaxBackground")
+color_rect = NodePath("ColorRect")
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2

@@ -3,4 +3,5 @@
 [ext_resource type="Script" path="res://Scenes/Characters/Player/PlayerCamera/PlayerCamera.gd" id="1_x515v"]
 
 [node name="PlayerCamera" type="Camera2D"]
+limit_smoothed = true
 script = ExtResource("1_x515v")

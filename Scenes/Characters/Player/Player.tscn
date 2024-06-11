@@ -1,4 +1,4 @@
-[gd_scene load_steps=113 format=3 uid="uid://bl26j3t0mek5b"]
+[gd_scene load_steps=112 format=3 uid="uid://bl26j3t0mek5b"]
 
 [ext_resource type="Script" path="res://Scenes/Characters/Player/Player.gd" id="1_1l21w"]
 [ext_resource type="Texture2D" uid="uid://df0ifir2t7wga" path="res://Assets/Characters/Player/Idle/Idle1.png" id="1_oqe78"]
@@ -92,7 +92,6 @@
 [ext_resource type="Texture2D" uid="uid://dlpd0sd7vpw3o" path="res://Assets/Characters/Player/Dash/Full/Fx/Dash6.png" id="82_v7thp"]
 [ext_resource type="Texture2D" uid="uid://dwu72f1angqn6" path="res://Assets/Characters/Player/Dash/Full/Fx/Dash7.png" id="83_1jigw"]
 [ext_resource type="Texture2D" uid="uid://ekryrkted82g" path="res://Assets/Characters/Player/Dash/Full/Fx/Dash8.png" id="84_3x114"]
-[ext_resource type="PackedScene" uid="uid://cc7u0joyf0j87" path="res://Scenes/Characters/Player/PlayerCamera/PlayerCamera.tscn" id="85_eyrtl"]
 [ext_resource type="Script" path="res://Scenes/Characters/Player/States/Dash.gd" id="88_dmcqp"]
 [ext_resource type="PackedScene" uid="uid://dbwc1ahlvgwr4" path="res://Scenes/Characters/Player/Shaders/GhostEffect.tscn" id="89_pkvs4"]
 
@@ -371,6 +370,7 @@ _data = {
 }
 
 [node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("sprite", "animation_player", "hurtbox", "hitbox")]
+visibility_layer = 4
 collision_layer = 2
 collision_mask = 5
 script = ExtResource("1_1l21w")
@@ -404,10 +404,6 @@ disabled = true
 libraries = {
 "": SubResource("AnimationLibrary_ktlgl")
 }
-
-[node name="PlayerCamera" parent="." node_paths=PackedStringArray("player") instance=ExtResource("85_eyrtl")]
-zoom = Vector2(1.75, 1.75)
-player = NodePath("..")
 
 [node name="FSM" type="Node" parent="." node_paths=PackedStringArray("player", "initial_state")]
 script = ExtResource("3_7d3nn")

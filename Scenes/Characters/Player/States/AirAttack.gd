@@ -22,6 +22,11 @@ func physics_update(delta: float) -> void:
 		Transitioned.emit("idle")
 
 func exit() -> void:
+	# Disable lasting hitboxes if exiting state early. 
+	#NOTE Might need a rework for multiple hitboxes (future)
+	var hitbox_collider: CollisionShape2D = player.hitbox.get_child(0)
+	if !hitbox_collider.disabled:
+		hitbox_collider.disabled = true
 	player.animation_player.disconnect("animation_finished", on_animation_finished)
 
 func animate_attack() -> void:
