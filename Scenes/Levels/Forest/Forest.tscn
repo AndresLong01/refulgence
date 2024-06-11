@@ -1,5 +1,6 @@
-[gd_scene load_steps=16 format=3 uid="uid://dhbh4hh7j27ff"]
+[gd_scene load_steps=17 format=3 uid="uid://dhbh4hh7j27ff"]
 
+[ext_resource type="PackedScene" uid="uid://ck73nbqehww8t" path="res://Scenes/UI/MainUI/MainUI.tscn" id="1_8b0lt"]
 [ext_resource type="PackedScene" uid="uid://bpehyxhgx1hm2" path="res://Scenes/Environment/ParallaxBackground/ParallaxBackground.tscn" id="1_liwo7"]
 [ext_resource type="TileSet" uid="uid://d2xv5g1jbc6ou" path="res://Assets/Environment/Tilesets/ForestTileset.tres" id="1_y82x8"]
 [ext_resource type="PackedScene" uid="uid://bl26j3t0mek5b" path="res://Scenes/Characters/Player/Player.tscn" id="2_n012w"]
@@ -8,16 +9,6 @@
 [ext_resource type="PackedScene" uid="uid://cwir8okqk0ra" path="res://Scenes/Environment/Decorations/Shop.tscn" id="6_kbd71"]
 [ext_resource type="PackedScene" uid="uid://dqomeb5oa4dm4" path="res://Scenes/Environment/Decorations/Lamp.tscn" id="7_4uo3y"]
 [ext_resource type="Texture2D" uid="uid://cehlmv3h4t62" path="res://Assets/Environment/Backgrounds/Forest/leaf.png" id="8_xoibu"]
-
-[sub_resource type="Gradient" id="Gradient_4t1hv"]
-offsets = PackedFloat32Array(0, 0.7)
-colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
-metadata/_snap_enabled = true
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_iqdv1"]
-gradient = SubResource("Gradient_4t1hv")
-fill = 1
-fill_from = Vector2(0.5, 0.5)
 
 [sub_resource type="Curve" id="Curve_5bid0"]
 min_value = -360.0
@@ -52,14 +43,28 @@ scale_min = 0.25
 scale_max = 0.5
 scale_curve = SubResource("CurveTexture_chtpd")
 
-[node name="Forest" type="Node2D"]
+[sub_resource type="Gradient" id="Gradient_4t1hv"]
+offsets = PackedFloat32Array(0, 0.7)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+metadata/_snap_enabled = true
 
-[node name="ParallaxBackground" parent="." instance=ExtResource("1_liwo7")]
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_iqdv1"]
+gradient = SubResource("Gradient_4t1hv")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+
+[node name="Forest" type="Node2D"]
 
 [node name="BackgroundMusic" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_shgap")
 volume_db = -20.0
 autoplay = true
+
+[node name="ParallaxBackground" parent="." instance=ExtResource("1_liwo7")]
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="MainUI" parent="UI" instance=ExtResource("1_8b0lt")]
 
 [node name="Background" type="TileMap" parent="."]
 z_index = -20
@@ -74,35 +79,6 @@ layer_0/tile_data = PackedInt32Array(0, 131072, 0, 1, 196608, 0, 2, 262144, 0, 3
 
 [node name="Player" parent="." instance=ExtResource("2_n012w")]
 position = Vector2(-3, -21)
-
-[node name="Shop" parent="." instance=ExtResource("6_kbd71")]
-visibility_layer = 2
-position = Vector2(-11, -64)
-
-[node name="ShopLight" type="PointLight2D" parent="Shop"]
-position = Vector2(-48, 34)
-color = Color(0.972549, 0.509804, 0.0431373, 1)
-energy = 2.0
-shadow_enabled = true
-texture = SubResource("GradientTexture2D_iqdv1")
-
-[node name="ShopLight2" type="PointLight2D" parent="Shop"]
-position = Vector2(49, 35)
-color = Color(0.972549, 0.509804, 0.0431373, 1)
-energy = 2.0
-shadow_enabled = true
-texture = SubResource("GradientTexture2D_iqdv1")
-
-[node name="Lamp" parent="." instance=ExtResource("7_4uo3y")]
-position = Vector2(975, -29)
-
-[node name="LampLight" type="PointLight2D" parent="Lamp"]
-position = Vector2(-6, -7)
-color = Color(0.972549, 0.509804, 0.0431373, 1)
-energy = 2.0
-shadow_enabled = true
-texture = SubResource("GradientTexture2D_iqdv1")
-texture_scale = 2.0
 
 [node name="PlayerCamera" parent="." node_paths=PackedStringArray("player") instance=ExtResource("3_b1css")]
 limit_left = -318
@@ -122,12 +98,41 @@ lifetime = 5.0
 
 [node name="Environment" type="Node2D" parent="."]
 
-[node name="DirectionalLight2D" type="DirectionalLight2D" parent="."]
+[node name="DirectionalLight2D" type="DirectionalLight2D" parent="Environment"]
 rotation = -0.523599
 color = Color(0.792157, 0.627451, 0.627451, 1)
 shadow_enabled = true
 shadow_filter = 2
 shadow_filter_smooth = 1.5
 
-[node name="CanvasModulate" type="CanvasModulate" parent="."]
+[node name="CanvasModulate" type="CanvasModulate" parent="Environment"]
 color = Color(0.792157, 0.627451, 0.627451, 1)
+
+[node name="Shop" parent="Environment" instance=ExtResource("6_kbd71")]
+visibility_layer = 2
+position = Vector2(-11, -64)
+
+[node name="ShopLight" type="PointLight2D" parent="Environment/Shop"]
+position = Vector2(-48, 34)
+color = Color(0.972549, 0.509804, 0.0431373, 1)
+energy = 2.0
+shadow_enabled = true
+texture = SubResource("GradientTexture2D_iqdv1")
+
+[node name="ShopLight2" type="PointLight2D" parent="Environment/Shop"]
+position = Vector2(49, 35)
+color = Color(0.972549, 0.509804, 0.0431373, 1)
+energy = 2.0
+shadow_enabled = true
+texture = SubResource("GradientTexture2D_iqdv1")
+
+[node name="Lamp" parent="Environment" instance=ExtResource("7_4uo3y")]
+position = Vector2(975, -29)
+
+[node name="LampLight" type="PointLight2D" parent="Environment/Lamp"]
+position = Vector2(-6, -7)
+color = Color(0.972549, 0.509804, 0.0431373, 1)
+energy = 2.0
+shadow_enabled = true
+texture = SubResource("GradientTexture2D_iqdv1")
+texture_scale = 2.0

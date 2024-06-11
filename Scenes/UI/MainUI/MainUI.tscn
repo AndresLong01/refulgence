@@ -1,0 +1,82 @@
+[gd_scene load_steps=7 format=3 uid="uid://ck73nbqehww8t"]
+
+[ext_resource type="Texture2D" uid="uid://b6hkgnni5r3tp" path="res://Assets/GUI/GUI Sections/Container.png" id="1_3wef1"]
+[ext_resource type="Texture2D" uid="uid://b215yv38kaaqq" path="res://Assets/GUI/GUI Sections/HPBarContainer.png" id="2_jq0gi"]
+[ext_resource type="Texture2D" uid="uid://ni44d4m2vfyv" path="res://Assets/GUI/GUI Sections/HPBar.png" id="3_jhoiq"]
+[ext_resource type="Texture2D" uid="uid://bnfdo88056tdd" path="res://Assets/GUI/GUI Sections/ResourceBarContainer.png" id="4_eebp7"]
+[ext_resource type="Texture2D" uid="uid://d31w74vqrhvgl" path="res://Assets/GUI/GUI Sections/MPBar.png" id="5_787jv"]
+[ext_resource type="Texture2D" uid="uid://oy8shndnuvqu" path="res://Assets/GUI/GUI Sections/StaminaBar.png" id="6_kw8nt"]
+
+[node name="MainUI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 24
+theme_override_constants/margin_top = 24
+theme_override_constants/margin_right = 24
+theme_override_constants/margin_bottom = 24
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+texture = ExtResource("1_3wef1")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(0, 38)
+layout_mode = 2
+size_flags_vertical = 8
+theme_override_constants/separation = 0
+
+[node name="Node2D" type="Node2D" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
+scale = Vector2(2, 2)
+
+[node name="HPBar" type="TextureProgressBar" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/Node2D"]
+custom_minimum_size = Vector2(128, 0)
+offset_right = 128.0
+offset_bottom = 7.0
+value = 100.0
+texture_under = ExtResource("2_jq0gi")
+texture_progress = ExtResource("3_jhoiq")
+texture_progress_offset = Vector2(1, 2)
+
+[node name="Node2D2" type="Node2D" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
+position = Vector2(0, 12)
+scale = Vector2(2, 2)
+
+[node name="ManaBar" type="TextureProgressBar" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/Node2D2"]
+offset_right = 45.0
+offset_bottom = 7.0
+value = 100.0
+texture_under = ExtResource("4_eebp7")
+texture_progress = ExtResource("5_787jv")
+texture_progress_offset = Vector2(1, 2)
+
+[node name="Node2D3" type="Node2D" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
+position = Vector2(0, 24)
+scale = Vector2(1.5, 2)
+
+[node name="StaminaBar" type="TextureProgressBar" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/Node2D3"]
+offset_right = 45.0
+offset_bottom = 7.0
+value = 100.0
+texture_under = ExtResource("4_eebp7")
+texture_progress = ExtResource("6_kw8nt")
+texture_progress_offset = Vector2(1, 2)

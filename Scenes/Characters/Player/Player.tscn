@@ -1,4 +1,4 @@
-[gd_scene load_steps=112 format=3 uid="uid://bl26j3t0mek5b"]
+[gd_scene load_steps=141 format=3 uid="uid://bl26j3t0mek5b"]
 
 [ext_resource type="Script" path="res://Scenes/Characters/Player/Player.gd" id="1_1l21w"]
 [ext_resource type="Texture2D" uid="uid://df0ifir2t7wga" path="res://Assets/Characters/Player/Idle/Idle1.png" id="1_oqe78"]
@@ -8,7 +8,10 @@
 [ext_resource type="Script" path="res://Resources/StatResource/StatResource.gd" id="2_jkqqh"]
 [ext_resource type="Texture2D" uid="uid://d1m3gmhrv4ddq" path="res://Assets/Characters/Player/Attacks/AirAtk/FX/AirAtk1.png" id="2_wpgsu"]
 [ext_resource type="Script" path="res://Scenes/Characters/Player/PlayerStateMachine.gd" id="3_7d3nn"]
+[ext_resource type="Texture2D" uid="uid://cjtgceuw8ecxe" path="res://Assets/Characters/Player/Rest/Sleeping/Sleeping3.png" id="3_erfvy"]
+[ext_resource type="Texture2D" uid="uid://chx4u3e2bs6vb" path="res://Assets/Characters/Player/Rest/Resting/Resting5.png" id="3_jrr7x"]
 [ext_resource type="Texture2D" uid="uid://8xgudn47g45h" path="res://Assets/Characters/Player/Idle/Idle2.png" id="3_qfh66"]
+[ext_resource type="Texture2D" uid="uid://6is5cbfpyfl6" path="res://Assets/Characters/Player/Rest/ToRest/ToRest7.png" id="3_qje3n"]
 [ext_resource type="Texture2D" uid="uid://d2oaoj8ifyg3e" path="res://Assets/Characters/Player/Idle/Idle3.png" id="4_lwrin"]
 [ext_resource type="Script" path="res://Scenes/Characters/Player/States/Idle.gd" id="4_yrb7c"]
 [ext_resource type="Texture2D" uid="uid://8l6e6q5ojimj" path="res://Assets/Characters/Player/Idle/Idle4.png" id="5_pqe55"]
@@ -92,8 +95,30 @@
 [ext_resource type="Texture2D" uid="uid://dlpd0sd7vpw3o" path="res://Assets/Characters/Player/Dash/Full/Fx/Dash6.png" id="82_v7thp"]
 [ext_resource type="Texture2D" uid="uid://dwu72f1angqn6" path="res://Assets/Characters/Player/Dash/Full/Fx/Dash7.png" id="83_1jigw"]
 [ext_resource type="Texture2D" uid="uid://ekryrkted82g" path="res://Assets/Characters/Player/Dash/Full/Fx/Dash8.png" id="84_3x114"]
+[ext_resource type="Texture2D" uid="uid://5ffhy1l6ruee" path="res://Assets/Characters/Player/Rest/ToRest/ToRest1.png" id="87_1xd8v"]
+[ext_resource type="Texture2D" uid="uid://bbsh5gryvm7ii" path="res://Assets/Characters/Player/Rest/Resting/Resting1.png" id="87_j6p0r"]
+[ext_resource type="Texture2D" uid="uid://dfv1hvftv7xm3" path="res://Assets/Characters/Player/Rest/ToRest/ToRest2.png" id="88_c6fot"]
 [ext_resource type="Script" path="res://Scenes/Characters/Player/States/Dash.gd" id="88_dmcqp"]
+[ext_resource type="Texture2D" uid="uid://cg3k5gkdoq1fb" path="res://Assets/Characters/Player/Rest/Resting/Resting2.png" id="88_j13e8"]
+[ext_resource type="Texture2D" uid="uid://cqbt273as1twt" path="res://Assets/Characters/Player/Rest/ToRest/ToRest3.png" id="89_13ncl"]
+[ext_resource type="Texture2D" uid="uid://bnmd44axkkg30" path="res://Assets/Characters/Player/Rest/Resting/Resting3.png" id="89_gw5or"]
 [ext_resource type="PackedScene" uid="uid://dbwc1ahlvgwr4" path="res://Scenes/Characters/Player/Shaders/GhostEffect.tscn" id="89_pkvs4"]
+[ext_resource type="Texture2D" uid="uid://bgy0rytgdrdvl" path="res://Assets/Characters/Player/Rest/Resting/Resting4.png" id="90_g1jdd"]
+[ext_resource type="Texture2D" uid="uid://clt5pv1clrkjj" path="res://Assets/Characters/Player/Rest/ToRest/ToRest4.png" id="90_wdif5"]
+[ext_resource type="Texture2D" uid="uid://b45qmrna0f4xa" path="res://Assets/Characters/Player/Rest/ToRest/ToRest5.png" id="91_6lpiy"]
+[ext_resource type="Texture2D" uid="uid://dnny4jnckayeo" path="res://Assets/Characters/Player/Rest/Resting/Resting6.png" id="91_tekok"]
+[ext_resource type="Texture2D" uid="uid://btqacc5imnixv" path="res://Assets/Characters/Player/Rest/ToRest/ToRest6.png" id="92_10gly"]
+[ext_resource type="Texture2D" uid="uid://binqmilvfvnrh" path="res://Assets/Characters/Player/Rest/Resting/Resting7.png" id="92_rqq6g"]
+[ext_resource type="Texture2D" uid="uid://ckjbuh03l4eqw" path="res://Assets/Characters/Player/Rest/Resting/Resting8.png" id="93_4mk41"]
+[ext_resource type="Texture2D" uid="uid://dnv1qjpe642yv" path="res://Assets/Characters/Player/Rest/Resting/Resting9.png" id="94_n7nqn"]
+[ext_resource type="Script" path="res://Scenes/Characters/Player/States/Rest.gd" id="95_0gpvh"]
+[ext_resource type="Texture2D" uid="uid://dwjsgwggyrkoh" path="res://Assets/Characters/Player/Rest/Resting/Resting10.png" id="95_18clq"]
+[ext_resource type="Texture2D" uid="uid://bfxvmbfufatfe" path="res://Assets/Characters/Player/Rest/ToSleep/ToSleep.png" id="103_jle5r"]
+[ext_resource type="Texture2D" uid="uid://cicsqadt3lamm" path="res://Assets/Characters/Player/Rest/Sleeping/Sleeping1.png" id="105_mt5bj"]
+[ext_resource type="Texture2D" uid="uid://bhsfahwu3ug6x" path="res://Assets/Characters/Player/Rest/Sleeping/Sleeping2.png" id="106_ejn2g"]
+[ext_resource type="Texture2D" uid="uid://ry87t54q7117" path="res://Assets/Characters/Player/Rest/Sleeping/Sleeping4.png" id="107_10lsb"]
+[ext_resource type="Texture2D" uid="uid://ylh2yr405mi5" path="res://Assets/Characters/Player/Rest/Sleeping/Sleeping5.png" id="108_pdnxd"]
+[ext_resource type="Script" path="res://Scenes/Characters/Player/States/Sleep.gd" id="119_g2lq1"]
 
 [sub_resource type="Resource" id="Resource_pooin"]
 script = ExtResource("2_jkqqh")
@@ -353,6 +378,71 @@ tracks/0/keys = {
 "values": [ExtResource("31_s5pdk"), ExtResource("32_7v8qx"), ExtResource("33_tmbos"), ExtResource("34_lv4sf"), ExtResource("35_eogbm"), ExtResource("36_0ui6r"), ExtResource("2_012e2")]
 }
 
+[sub_resource type="Animation" id="Animation_b6cyi"]
+resource_name = "Rest"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("87_j6p0r"), ExtResource("88_j13e8"), ExtResource("89_gw5or"), ExtResource("90_g1jdd"), ExtResource("3_jrr7x"), ExtResource("91_tekok"), ExtResource("92_rqq6g"), ExtResource("93_4mk41"), ExtResource("94_n7nqn"), ExtResource("95_18clq")]
+}
+
+[sub_resource type="Animation" id="Animation_jtn26"]
+resource_name = "StartRest"
+length = 0.7
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("87_1xd8v"), ExtResource("88_c6fot"), ExtResource("89_13ncl"), ExtResource("90_wdif5"), ExtResource("91_6lpiy"), ExtResource("92_10gly"), ExtResource("3_qje3n")]
+}
+
+[sub_resource type="Animation" id="Animation_ktlxq"]
+resource_name = "StartSleep"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("103_jle5r")]
+}
+
+[sub_resource type="Animation" id="Animation_jhrdr"]
+resource_name = "Sleep"
+length = 0.5
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("105_mt5bj"), ExtResource("106_ejn2g"), ExtResource("3_erfvy"), ExtResource("107_10lsb"), ExtResource("108_pdnxd")]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ktlgl"]
 _data = {
 "AirAttack": SubResource("Animation_b4ohp"),
@@ -363,9 +453,13 @@ _data = {
 "Idle": SubResource("Animation_b580k"),
 "Jump": SubResource("Animation_gyrly"),
 "Move": SubResource("Animation_fsefa"),
+"Rest": SubResource("Animation_b6cyi"),
+"Sleep": SubResource("Animation_jhrdr"),
 "StartFall": SubResource("Animation_ku2l6"),
 "StartJump": SubResource("Animation_rxakw"),
 "StartMove": SubResource("Animation_62hyx"),
+"StartRest": SubResource("Animation_jtn26"),
+"StartSleep": SubResource("Animation_ktlxq"),
 "StopMove": SubResource("Animation_wdoxt")
 }
 
@@ -381,7 +475,7 @@ hurtbox = NodePath("Hurtbox")
 hitbox = NodePath("Hitbox")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("6_4sg5t")
+texture = ExtResource("5_pqe55")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_8bk0o")
@@ -414,6 +508,10 @@ initial_state = NodePath("Idle")
 script = ExtResource("4_yrb7c")
 player = NodePath("../..")
 
+[node name="RestTimer" type="Timer" parent="FSM/Idle"]
+wait_time = 15.0
+one_shot = true
+
 [node name="Move" type="Node" parent="FSM" node_paths=PackedStringArray("player")]
 script = ExtResource("18_xsbqj")
 player = NodePath("../..")
@@ -444,6 +542,18 @@ one_shot = true
 
 [node name="AirAttack" type="Node" parent="FSM" node_paths=PackedStringArray("player")]
 script = ExtResource("66_mpnn0")
+player = NodePath("../..")
+
+[node name="Rest" type="Node" parent="FSM" node_paths=PackedStringArray("player")]
+script = ExtResource("95_0gpvh")
+player = NodePath("../..")
+
+[node name="SleepTimer" type="Timer" parent="FSM/Rest"]
+wait_time = 25.0
+one_shot = true
+
+[node name="Sleep" type="Node" parent="FSM" node_paths=PackedStringArray("player")]
+script = ExtResource("119_g2lq1")
 player = NodePath("../..")
 
 [connection signal="timeout" from="FSM/Dash/GhostTimer" to="FSM/Dash" method="_on_ghost_timer_timeout"]
