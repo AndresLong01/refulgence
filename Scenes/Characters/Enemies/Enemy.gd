@@ -5,6 +5,7 @@ class_name Enemy
 @export var enemy_speed: float = 60.0
 @export var path_node: Path2D
 @export var navigation_agent: NavigationAgent2D
+@export var disengage_area: Area2D
 @export var chase_area: Area2D
 @export var attack_area: Area2D
 

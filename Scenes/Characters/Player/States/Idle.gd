@@ -10,13 +10,15 @@ func enter() -> void:
 	rest_timer.connect("timeout", _on_rest_timer_timeout)
 
 func update(_delta: float) -> void:
-	check_for_jump_input()
-	check_for_attack_input()
-	check_for_dash_input()
-	
 	if not player.is_on_floor():
 		fall.set_slip_buffer()
 		Transitioned.emit("fall")
+	
+	if player.is_on_floor():
+		check_for_jump_input()
+	
+	check_for_attack_input()
+	check_for_backdash_input()
 
 func physics_update(_delta: float) -> void:
 	if (player.velocity.x != 0):

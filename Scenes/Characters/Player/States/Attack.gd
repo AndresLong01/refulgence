@@ -4,6 +4,7 @@ class_name Attack
 @onready var reset_combo = $ResetCombo
 
 const ATTACK_BUFFER_FRAMES: int = 16
+const HITBOX_DISPLACEMENT: int = 23
 
 var attack_buffer_counter: int = 0
 var combo_counter: int = 1
@@ -15,6 +16,11 @@ func enter() -> void:
 	player.animation_player.connect("animation_finished", on_animation_finished)
 
 func update(_delta: float) -> void:
+	if (player.sprite.flip_h and Input.is_action_pressed(GameConstants.INPUT_RIGHT) or 
+		not player.sprite.flip_h and Input.is_action_pressed(GameConstants.INPUT_LEFT)):
+		check_for_backdash_input()
+		return
+	
 	check_for_dash_input()
 
 func physics_update(delta : float) -> void:
@@ -32,14 +38,14 @@ func exit() -> void:
 	
 	reset_combo.start()
 
-#func attack() -> void:
-	#var new_position: Vector2
-	#if player.sprite.flip_h:
-		#new_position = Vector2(-23, -2)
-	#else:
-		#new_position = Vector2(23, -2)
-	#
-	#player.hitbox.position = new_position
+func attack() -> void:
+	var new_position: Vector2
+	if player.sprite.flip_h:
+		new_position = Vector2(-HITBOX_DISPLACEMENT, -2)
+	else:
+		new_position = Vector2(HITBOX_DISPLACEMENT, -2)
+	
+	player.hitbox.position = new_position
 
 func animate_attack_combo() -> void:
 	player.animation_player.play(GameConstants.ANIM_ATTACK + str(combo_counter))

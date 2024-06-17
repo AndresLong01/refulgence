@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://cwir8okqk0ra"]
+[gd_scene load_steps=10 format=3 uid="uid://c8ok5dyfyn8gn"]
 
 [ext_resource type="Texture2D" uid="uid://c3tcci45fl613" path="res://Assets/Environment/Decorations/shop_anim.png" id="1_j1mfl"]
 
@@ -52,7 +52,19 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kulnx"]
+size = Vector2(98, 6)
+
 [node name="Shop" type="AnimatedSprite2D"]
 z_index = -10
 sprite_frames = SubResource("SpriteFrames_iecrm")
 autoplay = "default"
+frame_progress = 0.0739738
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+visible = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(0, -16)
+shape = SubResource("RectangleShape2D_kulnx")
+one_way_collision = true

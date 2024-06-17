@@ -19,16 +19,13 @@ func flip_sprite() -> void:
 		return
 	
 	var isMovingLeft: bool = velocity.x < 0
-	if isMovingLeft:
-		hitbox.position.x = -23
-	else:
-		hitbox.position.x = 23
 	sprite.flip_h = isMovingLeft
 
 func _on_hurtbox_hit(area: Area2D) -> void:
 	var health: StatResource = get_stat_resource(StatResource.Stat.Health)
 	var player: Character = area.owner
 	
+	print(health.stat_value)
 	health.stat_value -= player.get_stat_resource(StatResource.Stat.Strength).stat_value
 
 func get_stat_resource(stat: StatResource.Stat) -> StatResource:

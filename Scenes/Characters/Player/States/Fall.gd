@@ -34,7 +34,7 @@ func exit():
 
 func calculate_buffer() -> void:
 	if Input.is_action_just_pressed(GameConstants.INPUT_JUMP):
-		if slip_buffer_counter > 0:
+		if slip_buffer_counter > 0 and player.is_on_floor():
 			Transitioned.emit("jump")
 		else:
 			jump_buffer_counter = JUMP_BUFFER_FRAMES

@@ -7,6 +7,7 @@ const MAX_SPEED: float = 300.0
 const ACCELERATION: float = 12.5
 
 var can_apply_movement: bool = true
+var ignore_sprite_flip: bool = false
 #endregion
 
 #region Jump State
@@ -24,7 +25,10 @@ func _ready() -> void:
 func _physics_process(_delta: float) -> void:
 	if can_apply_movement:
 		apply_horizontal_momentum()
-	flip_sprite()
+	
+	if not ignore_sprite_flip:
+		flip_sprite()
+	
 	move_and_slide()
 
 func apply_horizontal_momentum() -> void:
@@ -45,3 +49,6 @@ func toggle_horizontal_input(state: bool) -> void:
 	
 	if not can_apply_movement:
 		velocity.x = 0
+
+func toggle_ignore_sprite_flip(state: bool) -> void:
+	ignore_sprite_flip = state

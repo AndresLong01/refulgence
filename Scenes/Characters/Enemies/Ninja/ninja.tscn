@@ -1,10 +1,11 @@
-[gd_scene load_steps=50 format=3 uid="uid://cpkd4nxkmm7ib"]
+[gd_scene load_steps=67 format=3 uid="uid://cpkd4nxkmm7ib"]
 
 [ext_resource type="Script" path="res://Scenes/Characters/Enemies/Ninja/Ninja.gd" id="1_h31j7"]
 [ext_resource type="Script" path="res://Resources/StatResource/StatResource.gd" id="2_a4qgc"]
 [ext_resource type="Texture2D" uid="uid://dbp8abgyvb3ku" path="res://Assets/Characters/Enemies/PlaceholderNinja/Idle/Idle8.png" id="3_63hu7"]
 [ext_resource type="Texture2D" uid="uid://b5k4vv3byo4ur" path="res://Assets/Characters/Enemies/PlaceholderNinja/AttackOne/Attack2.png" id="3_d8vqt"]
 [ext_resource type="Script" path="res://Scenes/Characters/Enemies/EnemyStateMachine.gd" id="3_qgdfu"]
+[ext_resource type="Texture2D" uid="uid://t25dj0iaya8r" path="res://Assets/Characters/Enemies/PlaceholderNinja/Death/Death14.png" id="3_rx5km"]
 [ext_resource type="Script" path="res://Scenes/Characters/Enemies/Ninja/States/Idle.gd" id="4_hggm4"]
 [ext_resource type="Texture2D" uid="uid://ih5e2rdw53ek" path="res://Assets/Characters/Enemies/PlaceholderNinja/Idle/Idle1.png" id="4_ktx47"]
 [ext_resource type="Texture2D" uid="uid://sr3un08onpcd" path="res://Assets/Characters/Enemies/PlaceholderNinja/Idle/Idle2.png" id="5_h5rku"]
@@ -36,13 +37,27 @@
 [ext_resource type="Texture2D" uid="uid://bdwap4ca8uadm" path="res://Assets/Characters/Enemies/PlaceholderNinja/AttackOne/Attack3.png" id="31_g301g"]
 [ext_resource type="Texture2D" uid="uid://cpw3yprudhmjk" path="res://Assets/Characters/Enemies/PlaceholderNinja/AttackOne/Attack4.png" id="32_55r8o"]
 [ext_resource type="Script" path="res://Scenes/Characters/Enemies/Ninja/States/Patrol.gd" id="32_m7exb"]
-[ext_resource type="Script" path="res://Scenes/Characters/Enemies/Ninja/Chase.gd" id="33_8xway"]
+[ext_resource type="Texture2D" uid="uid://i7wkm6xaeh21" path="res://Assets/Characters/Enemies/PlaceholderNinja/Death/Death1.png" id="34_46tc8"]
+[ext_resource type="Texture2D" uid="uid://fkxw0rvywbs1" path="res://Assets/Characters/Enemies/PlaceholderNinja/Death/Death2.png" id="35_4pm6p"]
+[ext_resource type="Texture2D" uid="uid://bscaf6otdkwyi" path="res://Assets/Characters/Enemies/PlaceholderNinja/Death/Death3.png" id="36_ly0u6"]
+[ext_resource type="Texture2D" uid="uid://b5wcyniefgbal" path="res://Assets/Characters/Enemies/PlaceholderNinja/Death/Death4.png" id="37_ftgc5"]
+[ext_resource type="Texture2D" uid="uid://bii8lmbmhl70c" path="res://Assets/Characters/Enemies/PlaceholderNinja/Death/Death5.png" id="38_6b7oh"]
 [ext_resource type="Script" path="res://Scenes/Characters/Enemies/Ninja/States/Attack.gd" id="38_u5ucx"]
+[ext_resource type="Texture2D" uid="uid://cegif7l04d4pe" path="res://Assets/Characters/Enemies/PlaceholderNinja/Death/Death6.png" id="39_cpjeq"]
+[ext_resource type="Script" path="res://Scenes/Characters/Enemies/Ninja/States/Death.gd" id="39_vwggl"]
+[ext_resource type="Texture2D" uid="uid://bfnws0r4xku13" path="res://Assets/Characters/Enemies/PlaceholderNinja/Death/Death7.png" id="40_gvhbu"]
+[ext_resource type="Texture2D" uid="uid://c3t03n1vxcrxs" path="res://Assets/Characters/Enemies/PlaceholderNinja/Death/Death8.png" id="41_e1dqw"]
+[ext_resource type="Texture2D" uid="uid://sk4bgicbgcyy" path="res://Assets/Characters/Enemies/PlaceholderNinja/Death/Death9.png" id="42_usrr7"]
+[ext_resource type="Texture2D" uid="uid://bdj4barblk67c" path="res://Assets/Characters/Enemies/PlaceholderNinja/Death/Death10.png" id="43_pnqtp"]
+[ext_resource type="Texture2D" uid="uid://cs67ji3sy6p2g" path="res://Assets/Characters/Enemies/PlaceholderNinja/Death/Death11.png" id="44_dbcyn"]
+[ext_resource type="Texture2D" uid="uid://cdrdy0vl6ghqf" path="res://Assets/Characters/Enemies/PlaceholderNinja/Death/Death12.png" id="45_jkoeq"]
+[ext_resource type="Texture2D" uid="uid://dlexdplbspdau" path="res://Assets/Characters/Enemies/PlaceholderNinja/Death/Death13.png" id="46_xyr2x"]
+[ext_resource type="Script" path="res://Scenes/Characters/Enemies/Ninja/States/Chase.gd" id="51_qwdm4"]
 
 [sub_resource type="Resource" id="Resource_nwtfs"]
 script = ExtResource("2_a4qgc")
 stat_type = 0
-stat_value = 20.0
+stat_value = 2.0
 
 [sub_resource type="Resource" id="Resource_ru6ww"]
 script = ExtResource("2_a4qgc")
@@ -55,11 +70,14 @@ height = 52.0
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ctsan"]
 size = Vector2(50, 38)
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_huuj3"]
+radius = 340.0
+
 [sub_resource type="CircleShape2D" id="CircleShape2D_pb77f"]
 radius = 200.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_kbyk5"]
-radius = 60.4152
+radius = 35.0
 
 [sub_resource type="Animation" id="Animation_8qrp2"]
 resource_name = "Attack"
@@ -87,6 +105,36 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
 "values": [true, false, true]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("FSM/Attack")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.1),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"attack"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_m4lb2"]
+resource_name = "Death"
+length = 1.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.2, 1.30055),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("34_46tc8"), ExtResource("35_4pm6p"), ExtResource("36_ly0u6"), ExtResource("37_ftgc5"), ExtResource("38_6b7oh"), ExtResource("39_cpjeq"), ExtResource("40_gvhbu"), ExtResource("41_e1dqw"), ExtResource("42_usrr7"), ExtResource("43_pnqtp"), ExtResource("44_dbcyn"), ExtResource("45_jkoeq"), ExtResource("46_xyr2x"), ExtResource("3_rx5km")]
 }
 
 [sub_resource type="Animation" id="Animation_wwbyk"]
@@ -142,18 +190,20 @@ tracks/0/keys = {
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_rgsam"]
 _data = {
 "Attack": SubResource("Animation_8qrp2"),
+"Death": SubResource("Animation_m4lb2"),
 "Idle": SubResource("Animation_wwbyk"),
 "Move": SubResource("Animation_0foy8"),
 "Patrol": SubResource("Animation_t2hcl")
 }
 
-[node name="Ninja" type="CharacterBody2D" node_paths=PackedStringArray("navigation_agent", "chase_area", "attack_area", "sprite", "animation_player", "hurtbox", "hitbox")]
+[node name="Ninja" type="CharacterBody2D" node_paths=PackedStringArray("navigation_agent", "disengage_area", "chase_area", "attack_area", "sprite", "animation_player", "hurtbox", "hitbox")]
 visibility_layer = 4
 collision_layer = 4
 collision_mask = 3
 script = ExtResource("1_h31j7")
 enemy_speed = 80.0
 navigation_agent = NodePath("NavigationAgent2D")
+disengage_area = NodePath("DisengageArea")
 chase_area = NodePath("ChaseArea")
 attack_area = NodePath("AttackArea")
 stats = Array[ExtResource("2_a4qgc")]([SubResource("Resource_nwtfs"), SubResource("Resource_ru6ww")])
@@ -163,7 +213,7 @@ hurtbox = NodePath("Hurtbox")
 hitbox = NodePath("Hitbox")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("5_h5rku")
+texture = ExtResource("34_46tc8")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_oip2f")
@@ -179,16 +229,24 @@ collision_mask = 2
 shape = SubResource("CapsuleShape2D_oip2f")
 
 [node name="Hitbox" type="Area2D" parent="."]
-position = Vector2(23, 2)
+position = Vector2(33, -10)
 collision_layer = 4
 collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
-position = Vector2(12, -10)
 shape = SubResource("RectangleShape2D_ctsan")
 disabled = true
 
+[node name="DisengageArea" type="Area2D" parent="."]
+visible = false
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DisengageArea"]
+shape = SubResource("CircleShape2D_huuj3")
+
 [node name="ChaseArea" type="Area2D" parent="."]
+visible = false
 collision_layer = 0
 collision_mask = 2
 
@@ -196,6 +254,7 @@ collision_mask = 2
 shape = SubResource("CircleShape2D_pb77f")
 
 [node name="AttackArea" type="Area2D" parent="."]
+visible = false
 collision_layer = 0
 collision_mask = 2
 
@@ -229,7 +288,7 @@ enemy = NodePath("../..")
 one_shot = true
 
 [node name="Chase" type="Node" parent="FSM" node_paths=PackedStringArray("target_update_timer", "enemy")]
-script = ExtResource("33_8xway")
+script = ExtResource("51_qwdm4")
 target_update_timer = NodePath("TargetUpdateTimer")
 enemy = NodePath("../..")
 
@@ -239,4 +298,12 @@ autostart = true
 
 [node name="Attack" type="Node" parent="FSM" node_paths=PackedStringArray("enemy")]
 script = ExtResource("38_u5ucx")
+enemy = NodePath("../..")
+
+[node name="AttackCooldownTimer" type="Timer" parent="FSM/Attack"]
+wait_time = 0.5
+one_shot = true
+
+[node name="Death" type="Node" parent="FSM" node_paths=PackedStringArray("enemy")]
+script = ExtResource("39_vwggl")
 enemy = NodePath("../..")

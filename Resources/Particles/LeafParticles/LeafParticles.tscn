@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=3 uid="uid://xh0fhenjmnwm"]
+
+[ext_resource type="Material" uid="uid://dipb7cp1wrnve" path="res://Resources/Particles/LeafParticles/LeafParticles.tres" id="1_bdnig"]
+[ext_resource type="Texture2D" uid="uid://cehlmv3h4t62" path="res://Assets/Environment/Backgrounds/Forest/leaf.png" id="2_txw8a"]
+[ext_resource type="Script" path="res://Resources/Particles/LeafParticles/LeafParticles.gd" id="3_7mpar"]
+
+[node name="LeafParticles" type="GPUParticles2D"]
+modulate = Color(0.32549, 0.32549, 0.32549, 1)
+z_index = -30
+emitting = false
+amount = 16
+process_material = ExtResource("1_bdnig")
+texture = ExtResource("2_txw8a")
+lifetime = 5.0
+script = ExtResource("3_7mpar")
