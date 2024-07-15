@@ -13,7 +13,7 @@ var max_combo_count: int = 2
 func enter() -> void:
 	player.toggle_horizontal_input(false)
 	animate_attack_combo()
-	player.animation_player.connect("animation_finished", on_animation_finished)
+	player.animation_player.connect("animation_finished", _on_animation_finished)
 
 func update(_delta: float) -> void:
 	if (player.sprite.flip_h and Input.is_action_pressed(GameConstants.INPUT_RIGHT) or 
@@ -34,7 +34,7 @@ func exit() -> void:
 	var hitbox_collider: CollisionShape2D = player.hitbox.get_child(0)
 	if !hitbox_collider.disabled:
 		hitbox_collider.disabled = true
-	player.animation_player.disconnect("animation_finished", on_animation_finished)
+	player.animation_player.disconnect("animation_finished", _on_animation_finished)
 	
 	reset_combo.start()
 
@@ -60,7 +60,7 @@ func calculate_buffer() -> void:
 	if attack_buffer_counter > 0:
 		attack_buffer_counter -= 1
 
-func on_animation_finished(_animation_name: String) -> void:
+func _on_animation_finished(_animation_name: String) -> void:
 	if attack_buffer_counter > 0:
 		animate_attack_combo()
 	else:

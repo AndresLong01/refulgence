@@ -1,7 +1,6 @@
-[gd_scene load_steps=67 format=3 uid="uid://cpkd4nxkmm7ib"]
+[gd_scene load_steps=64 format=3 uid="uid://cpkd4nxkmm7ib"]
 
 [ext_resource type="Script" path="res://Scenes/Characters/Enemies/Ninja/Ninja.gd" id="1_h31j7"]
-[ext_resource type="Script" path="res://Resources/StatResource/StatResource.gd" id="2_a4qgc"]
 [ext_resource type="Texture2D" uid="uid://dbp8abgyvb3ku" path="res://Assets/Characters/Enemies/PlaceholderNinja/Idle/Idle8.png" id="3_63hu7"]
 [ext_resource type="Texture2D" uid="uid://b5k4vv3byo4ur" path="res://Assets/Characters/Enemies/PlaceholderNinja/AttackOne/Attack2.png" id="3_d8vqt"]
 [ext_resource type="Script" path="res://Scenes/Characters/Enemies/EnemyStateMachine.gd" id="3_qgdfu"]
@@ -53,16 +52,6 @@
 [ext_resource type="Texture2D" uid="uid://cdrdy0vl6ghqf" path="res://Assets/Characters/Enemies/PlaceholderNinja/Death/Death12.png" id="45_jkoeq"]
 [ext_resource type="Texture2D" uid="uid://dlexdplbspdau" path="res://Assets/Characters/Enemies/PlaceholderNinja/Death/Death13.png" id="46_xyr2x"]
 [ext_resource type="Script" path="res://Scenes/Characters/Enemies/Ninja/States/Chase.gd" id="51_qwdm4"]
-
-[sub_resource type="Resource" id="Resource_nwtfs"]
-script = ExtResource("2_a4qgc")
-stat_type = 0
-stat_value = 2.0
-
-[sub_resource type="Resource" id="Resource_ru6ww"]
-script = ExtResource("2_a4qgc")
-stat_type = 1
-stat_value = 4.0
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_oip2f"]
 height = 52.0
@@ -206,7 +195,6 @@ navigation_agent = NodePath("NavigationAgent2D")
 disengage_area = NodePath("DisengageArea")
 chase_area = NodePath("ChaseArea")
 attack_area = NodePath("AttackArea")
-stats = Array[ExtResource("2_a4qgc")]([SubResource("Resource_nwtfs"), SubResource("Resource_ru6ww")])
 sprite = NodePath("Sprite2D")
 animation_player = NodePath("AnimationPlayer")
 hurtbox = NodePath("Hurtbox")
@@ -238,7 +226,6 @@ shape = SubResource("RectangleShape2D_ctsan")
 disabled = true
 
 [node name="DisengageArea" type="Area2D" parent="."]
-visible = false
 collision_layer = 0
 collision_mask = 2
 
@@ -246,7 +233,6 @@ collision_mask = 2
 shape = SubResource("CircleShape2D_huuj3")
 
 [node name="ChaseArea" type="Area2D" parent="."]
-visible = false
 collision_layer = 0
 collision_mask = 2
 
@@ -254,7 +240,6 @@ collision_mask = 2
 shape = SubResource("CircleShape2D_pb77f")
 
 [node name="AttackArea" type="Area2D" parent="."]
-visible = false
 collision_layer = 0
 collision_mask = 2
 

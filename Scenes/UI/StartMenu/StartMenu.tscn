@@ -1,0 +1,155 @@
+[gd_scene load_steps=14 format=3 uid="uid://baqwwonupgrv"]
+
+[ext_resource type="Texture2D" uid="uid://thkmyyhc3mkh" path="res://Assets/GUI/GUI Sections/ButtonMedium.png" id="1_6yt6c"]
+[ext_resource type="Texture2D" uid="uid://bih0k1ifk8teg" path="res://Assets/Environment/Backgrounds/Forest/background_layer_1.png" id="1_eften"]
+[ext_resource type="Script" path="res://Scenes/UI/StartMenu/StartMenu.gd" id="1_ljaae"]
+[ext_resource type="Texture2D" uid="uid://cxu4jkwr10trj" path="res://Assets/Environment/Backgrounds/Forest/background_layer_2.png" id="2_ayijt"]
+[ext_resource type="Texture2D" uid="uid://b7njvistvthke" path="res://Assets/GUI/GUI Sections/ButtonActiveMedium.png" id="2_kbt73"]
+[ext_resource type="Texture2D" uid="uid://jgqaggcgfw0e" path="res://Assets/Environment/Backgrounds/Forest/background_layer_3.png" id="3_2q53d"]
+[ext_resource type="Texture2D" uid="uid://cm5m8mq8rovoa" path="res://Assets/GUI/GUI Sections/ButtonDisabledMedium.png" id="3_comf4"]
+[ext_resource type="Script" path="res://Scenes/UI/UIContainer.gd" id="4_xt0w8"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_s1vw0"]
+texture = ExtResource("1_6yt6c")
+expand_margin_left = 36.0
+expand_margin_top = 8.0
+expand_margin_right = 36.0
+expand_margin_bottom = 12.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_wbhiy"]
+texture = ExtResource("1_6yt6c")
+expand_margin_left = 36.0
+expand_margin_top = 8.0
+expand_margin_right = 36.0
+expand_margin_bottom = 12.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_yrgk1"]
+texture = ExtResource("2_kbt73")
+expand_margin_left = 36.0
+expand_margin_top = 8.0
+expand_margin_right = 36.0
+expand_margin_bottom = 12.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_y5h6l"]
+texture = ExtResource("3_comf4")
+expand_margin_left = 36.0
+expand_margin_top = 8.0
+expand_margin_right = 36.0
+expand_margin_bottom = 12.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_s0uv3"]
+texture = ExtResource("2_kbt73")
+expand_margin_left = 36.0
+expand_margin_top = 8.0
+expand_margin_right = 36.0
+expand_margin_bottom = 12.0
+
+[node name="StartMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ljaae")
+
+[node name="Background" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Forest3" type="TextureRect" parent="Background"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_eften")
+
+[node name="Forest2" type="TextureRect" parent="Background"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_ayijt")
+
+[node name="Forest1" type="TextureRect" parent="Background"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_2q53d")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Spacer" type="Control" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Start" type="VBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 24
+script = ExtResource("4_xt0w8")
+
+[node name="Label" type="Label" parent="VBoxContainer/Start"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.537255, 0.580392, 0.52549, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 6
+theme_override_constants/shadow_offset_y = 6
+theme_override_font_sizes/font_size = 72
+text = "Refulgence"
+horizontal_alignment = 1
+
+[node name="ButtonGroup" type="VBoxContainer" parent="VBoxContainer/Start"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 40
+
+[node name="MenuButton" type="Button" parent="VBoxContainer/Start/ButtonGroup"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxTexture_s1vw0")
+theme_override_styles/hover = SubResource("StyleBoxTexture_wbhiy")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_yrgk1")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_y5h6l")
+theme_override_styles/focus = SubResource("StyleBoxTexture_s0uv3")
+text = "Start"
+
+[node name="MenuButton2" type="Button" parent="VBoxContainer/Start/ButtonGroup"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxTexture_s1vw0")
+theme_override_styles/hover = SubResource("StyleBoxTexture_wbhiy")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_yrgk1")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_y5h6l")
+theme_override_styles/focus = SubResource("StyleBoxTexture_s0uv3")
+text = "Settings"
+
+[node name="MenuButton3" type="Button" parent="VBoxContainer/Start/ButtonGroup"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxTexture_s1vw0")
+theme_override_styles/hover = SubResource("StyleBoxTexture_wbhiy")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_yrgk1")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_y5h6l")
+theme_override_styles/focus = SubResource("StyleBoxTexture_s0uv3")
+text = "Exit"
+
+[node name="Spacer2" type="Control" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
