@@ -7,8 +7,8 @@ var attack_buffer_counter: int = 0
 
 func enter() -> void:
 	animate_attack()
-	if not player.animation_player.is_connected("animation_finished", on_animation_finished):
-		player.animation_player.connect("animation_finished", on_animation_finished)
+	if not player.animation_player.is_connected("animation_finished", _on_animation_finished):
+		player.animation_player.connect("animation_finished", _on_animation_finished)
 
 func update(_delta: float) -> void:
 	check_for_attack_input()
@@ -27,7 +27,7 @@ func exit() -> void:
 	var hitbox_collider: CollisionShape2D = player.hitbox.get_child(0)
 	if !hitbox_collider.disabled:
 		hitbox_collider.disabled = true
-	player.animation_player.disconnect("animation_finished", on_animation_finished)
+	player.animation_player.disconnect("animation_finished", _on_animation_finished)
 
 func animate_attack() -> void:
 	player.animation_player.play(GameConstants.ANIM_AIR_ATTACK)
@@ -39,7 +39,7 @@ func calculate_buffer() -> void:
 	if attack_buffer_counter > 0:
 		attack_buffer_counter -= 1
 
-func on_animation_finished(_animation_name: String) -> void:
+func _on_animation_finished(_animation_name: String) -> void:
 	if attack_buffer_counter > 0:
 		animate_attack()
 	else:

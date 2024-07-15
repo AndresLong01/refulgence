@@ -138,7 +138,7 @@ rotation = -0.523599
 color = Color(0.792157, 0.627451, 0.627451, 1)
 shadow_enabled = true
 shadow_filter = 2
-shadow_filter_smooth = 1.5
+shadow_filter_smooth = 2.5
 
 [node name="CanvasModulate" type="CanvasModulate" parent="Environment"]
 color = Color(0.792157, 0.627451, 0.627451, 1)

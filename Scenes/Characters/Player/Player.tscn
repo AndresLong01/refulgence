@@ -577,7 +577,7 @@ hurtbox = NodePath("Hurtbox")
 hitbox = NodePath("Hitbox")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("110_w7ap4")
+texture = ExtResource("37_n6hcw")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_8bk0o")

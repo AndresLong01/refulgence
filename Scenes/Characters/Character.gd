@@ -25,7 +25,6 @@ func _on_hurtbox_hit(area: Area2D) -> void:
 	var health: StatResource = get_stat_resource(StatResource.Stat.Health)
 	var player: Character = area.owner
 	
-	print(health.stat_value)
 	health.stat_value -= player.get_stat_resource(StatResource.Stat.Strength).stat_value
 
 func get_stat_resource(stat: StatResource.Stat) -> StatResource:
