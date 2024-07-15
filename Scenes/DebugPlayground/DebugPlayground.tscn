@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://b2uvoh0mpjvq" path="res://Assets/Environment/Tiles/Dungeon Tile Set.png" id="1_qxa1j"]
 [ext_resource type="PackedScene" uid="uid://bl26j3t0mek5b" path="res://Scenes/Characters/Player/Player.tscn" id="2_tmdwt"]
 [ext_resource type="PackedScene" uid="uid://cc7u0joyf0j87" path="res://Scenes/Characters/Player/PlayerCamera/PlayerCamera.tscn" id="3_htbl1"]
-[ext_resource type="PackedScene" uid="uid://cpkd4nxkmm7ib" path="res://Scenes/Characters/Enemies/Ninja/Ninja.tscn" id="3_uo1p4"]
+[ext_resource type="PackedScene" uid="uid://cpkd4nxkmm7ib" path="res://Scenes/Characters/Enemies/Ninja/ninja.tscn" id="3_uo1p4"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_a1uw3"]
 texture = ExtResource("1_qxa1j")
