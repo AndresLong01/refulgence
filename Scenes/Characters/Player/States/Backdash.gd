@@ -1,7 +1,7 @@
 extends PlayerState
 class_name Backdash
 
-const DASH_VELOCITY: float = 150.0
+const DASH_VELOCITY: float = 200.0
 
 func enter():
 	player.toggle_horizontal_input(false)

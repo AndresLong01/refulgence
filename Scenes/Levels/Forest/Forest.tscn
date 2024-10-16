@@ -92,7 +92,6 @@ fill_from = Vector2(0.5, 0.5)
 [node name="BackgroundMusic" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_shgap")
 volume_db = -20.0
-autoplay = true
 
 [node name="ParallaxBackground" parent="." instance=ExtResource("1_liwo7")]
 

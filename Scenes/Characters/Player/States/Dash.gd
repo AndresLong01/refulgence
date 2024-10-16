@@ -28,7 +28,7 @@ func exit():
 
 func add_ghost():
 	var ghost = ghost_node.instantiate()
-	ghost.set_property(player.sprite.texture, player.position, player.sprite.scale, player.sprite.flip_h)
+	ghost.set_property(player.sprite, player.position, player.sprite.scale, player.sprite.flip_h)
 	get_tree().current_scene.add_child(ghost)
 
 func _on_animation_finished(_animation_name: String) -> void:

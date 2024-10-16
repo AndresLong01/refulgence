@@ -1,0 +1,8 @@
+[gd_resource type="CanvasTexture" load_steps=3 format=3 uid="uid://77gj3j2stvlk"]
+
+[ext_resource type="Texture2D" uid="uid://cm1ldggobyu8j" path="res://Assets/Characters/Player/Sprites/Attacks.png" id="1_q6p81"]
+[ext_resource type="Texture2D" uid="uid://dcyf8i6pm6pih" path="res://Assets/Characters/Player/SpriteNormalMap/Attacks_n.png" id="2_ohc0h"]
+
+[resource]
+diffuse_texture = ExtResource("1_q6p81")
+normal_texture = ExtResource("2_ohc0h")
