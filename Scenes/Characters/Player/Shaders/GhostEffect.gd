@@ -3,8 +3,11 @@ extends Sprite2D
 func _ready() -> void:
 	ghosting()
 
-func set_property(sprite: Texture2D, tx_pos: Vector2, tx_scale: Vector2, needs_direction_change: bool) -> void:
-	texture = sprite
+func set_property(sprite: Sprite2D, tx_pos: Vector2, tx_scale: Vector2, needs_direction_change: bool) -> void:
+	texture = sprite.texture
+	hframes = sprite.hframes
+	vframes = sprite.vframes
+	frame_coords = sprite.frame_coords
 	position = tx_pos
 	scale = tx_scale
 	flip_h = needs_direction_change
